@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#e21b23">
-  <meta name="description" content="Diseño conceptual académico inspirado en Claro Perú: panel de cambios de plan y simulación de recibo, con datos ilustrativos.">
-  <title>Mi Claro | Gestiona tu plan y simula tu recibo — Diseño conceptual</title>
+  <meta name="description" content="Prototipo académico interactivo inspirado en Claro Perú: compara cambios de plan, aprende sus condiciones y simula los costos mensuales y de un año.">
+  <title>Mi Claro | Control de plan y simulador anual interactivo · Prototipo UX</title>
   <style>
     :root { --navy:#132d47; --navy2:#1a3b55; --teal:#008e88; --teal-dark:#08716e; --blue:#2474c7; --ink:#192c3e; --muted:#64768a; --line:#e3eaf0; --bg:#f4f7fa; --white:#fff; --soft:#eef8f7; --amber:#a76c17; --amber-bg:#fff7e9; --radius:18px; --shadow:0 11px 32px rgba(19,45,71,.055); }
     *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.6 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif} button,input,select,textarea{font:inherit} button{cursor:pointer} button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,a:focus-visible{outline:3px solid #6fb8ed;outline-offset:3px} .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
@@ -420,6 +420,34 @@
       .modal{animation:none!important}
     }
 
+
+    /* USER TESTING REFINEMENTS — visible actions, plain-language explanations, annual chart */
+    .sim-access{display:flex;align-items:center;gap:18px;padding:19px 22px;margin:4px 0 22px;border-radius:20px;background:linear-gradient(115deg,#b80b22,#dc1b31 62%,#f34550);box-shadow:0 14px 27px rgba(191,22,42,.15);color:#fff;position:relative;overflow:hidden;isolation:isolate}
+    .sim-access:after{content:"";position:absolute;width:240px;height:240px;border:30px solid rgba(255,255,255,.07);border-radius:50%;right:-70px;top:-117px;pointer-events:none;z-index:-1;animation:hero-gradient 12s ease infinite}
+    .sim-access-icon{display:grid;place-items:center;width:62px;height:62px;border-radius:18px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.24);flex:none}
+    .sim-access-icon svg{width:38px;height:38px}.sim-access-text{min-width:0;flex:1}.sim-access-kicker{font-size:10px;letter-spacing:1.5px;font-weight:850;color:#ffd4da}.sim-access h3{font-size:clamp(16px,1.5vw,21px);letter-spacing:-.6px;line-height:1.22;margin:4px 0 5px;color:white}.sim-access p{font-size:12px;line-height:1.55;color:#ffe7eb;margin:0;max-width:630px}.sim-access p strong{color:white}
+    .sim-access-button{flex:none;border:0;box-shadow:0 8px 24px rgba(89,12,22,.15);color:#bd1127;background:#fff;border-radius:12px;min-height:49px;padding:12px 20px;font-size:13px;font-weight:900;display:flex;align-items:center;gap:14px;transition:transform .25s,box-shadow .25s}.sim-access-button:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(89,12,22,.25)}.sim-access-button span{font-size:19px}
+    .benefits-intro{display:flex;gap:11px;align-items:start;background:#fff8f9;border-radius:13px;padding:13px 15px;margin-bottom:13px;border:1px solid #f8dfe3}.benefits-intro strong{font-size:13px;color:#4d2930}.benefits-intro p{margin:3px 0 0;font-size:11px;color:#80646a;line-height:1.5}.info-token{display:grid;place-items:center;width:23px;height:23px;color:#fff;background:#dc1930;border-radius:50%;font-size:13px;font-weight:900;flex:none}
+    .improved-benefits{grid-template-columns:repeat(3,minmax(0,1fr));gap:11px}.benefit-card{border-radius:15px;border:1px solid #ece6e8;background:#fff;padding:15px;min-width:0;position:relative;transition:transform .25s,box-shadow .25s,border-color .25s}.benefit-card:hover{transform:translateY(-3px);border-color:#f3a8b4;box-shadow:0 12px 20px rgba(160,27,44,.08)}.benefit-top{display:flex;align-items:center;gap:8px;margin-bottom:12px}.benefit-svg{width:36px;height:36px;display:grid;place-items:center;border-radius:11px;background:#fff0f2;color:#d92035;flex:none}.benefit-svg svg{width:23px;height:23px}.benefit-label{font-size:9px;letter-spacing:1px;color:#bc2f41;font-weight:850}.benefit-card h4{font-size:14px;line-height:1.25;color:#382e35;margin:0 0 8px}.benefit-card>p{font-size:11px;line-height:1.62;color:#73636b;margin:0 0 8px;min-height:67px}.benefit-help{border-top:1px dashed #efdae0;padding-top:8px}.benefit-help summary{list-style:none;cursor:pointer;color:#c51930;font-weight:850;font-size:11px;display:flex;justify-content:space-between;gap:4px}.benefit-help summary::-webkit-details-marker{display:none}.benefit-help summary:after{content:"+";font-size:16px;line-height:1}.benefit-help[open] summary:after{content:"−"}.benefit-help p{font-size:11px;color:#685c62;line-height:1.6;margin:9px 0 0}.benefit-clarity{display:flex;align-items:start;gap:9px;margin-top:11px;padding:12px;border-left:3px solid #e51b34;background:#fef9f9;border-radius:6px 11px 11px 6px;font-size:11px;color:#6a5960;line-height:1.55}.benefit-clarity>span:first-child{color:#e11d36;font-size:20px}.benefit-clarity strong{color:#412d33}
+    .deadline-alert{display:flex;align-items:flex-start;gap:12px;border:1px solid #f3d4a0;background:#fff9ed;padding:16px 17px;border-radius:13px;margin:4px 0 21px}.deadline-alert-icon{width:30px;height:30px;border-radius:50%;background:#ffe6b0;color:#9a5b0e;display:grid;place-items:center;font-weight:900;flex:none}.deadline-alert strong{display:block;color:#704a12;font-size:13px;line-height:1.35}.deadline-alert p{font-size:11px;color:#705b39;line-height:1.65;margin:6px 0 0}.deadline-alert b{color:#63481e}
+    .confirm-panel{border:2px solid #eea4af;border-radius:16px;overflow:hidden;background:#fffafa;margin:20px 0 15px;box-shadow:0 6px 17px rgba(222,42,66,.055)}.confirm-panel-header{display:flex;gap:11px;align-items:center;background:#fff0f2;padding:14px 16px;border-bottom:1px solid #f4cfda}.confirm-shield{display:grid;place-items:center;border-radius:10px;background:#e21b32;color:#fff;width:35px;height:35px;flex:none;font-weight:900}.confirm-panel-header>div{flex:1}.confirm-panel-header strong{font-size:14px;color:#a9182f}.confirm-panel-header p{font-size:11px;color:#915762;margin:1px 0 0;line-height:1.35}.required-chip{border:1px solid #f0b9c2;background:white;border-radius:50px;color:#b52a3b;font-size:9px;letter-spacing:.5px;font-weight:900;padding:5px 8px}.upgraded-ack{margin:0;padding:17px 16px 8px;align-items:center;font-size:12px;line-height:1.7;color:#51434a;gap:13px}.upgraded-ack input{width:23px;height:23px;margin:0;cursor:pointer;flex:none}.upgraded-ack b{font-size:12px;color:#362d34}.confirm-helper{margin:0 16px 15px;background:#fff;border:1px solid #f1e1e4;padding:8px 11px;color:#ad4252;font-size:11px;border-radius:9px}.confirm-panel.valid{border-color:#74bda3}.confirm-panel.valid .confirm-panel-header{background:#edfaf5;border-color:#c9e9da}.confirm-panel.valid .confirm-shield{background:#278564}.confirm-panel.valid .confirm-panel-header strong,.confirm-panel.valid .confirm-helper{color:#256951}.confirm-panel.valid .confirm-helper{border-color:#cfe9da}
+    .annual-section{margin-top:24px;position:relative}.annual-heading{display:flex;align-items:center;justify-content:space-between;gap:18px;background:linear-gradient(112deg,#b20b20,#df2036 64%,#f1515e);padding:22px 27px;border-radius:20px 20px 0 0;color:#fff}.annual-eyebrow{font-size:10px;letter-spacing:1.7px;font-weight:900;color:#ffd4da}.annual-heading h2{font-size:clamp(19px,2vw,27px);letter-spacing:-.65px;line-height:1.2;margin:5px 0 6px;color:white}.annual-heading p{font-size:12px;color:#ffe4e8;margin:0}.annual-heading-icon{display:grid;place-items:center;width:57px;height:57px;border-radius:16px;background:#ffffff21;border:1px solid #ffffff40;flex:none}.annual-heading-icon svg{height:37px;width:37px}
+    .annual-stats{background:#fff;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-left:1px solid #f1e3e6;border-right:1px solid #f1e3e6}.annual-stat{padding:21px clamp(14px,2vw,28px);display:flex;flex-direction:column;gap:5px;min-width:0;border-right:1px solid #eee3e6}.annual-stat:last-child{border:0}.annual-stat>span{font-size:11px;color:#83747b;font-weight:700}.annual-stat strong{font-size:clamp(20px,2.3vw,31px);color:#3c3035;line-height:1.2;letter-spacing:-1px;overflow-wrap:anywhere}.annual-stat small{font-size:10px;color:#8a7b81}.annual-stat.annual-featured{background:#fff4f5}.annual-featured strong{color:#d71b31}
+    .annual-chart-card{background:white;border:1px solid #f0e3e6;box-shadow:var(--shadow);border-radius:0 0 20px 20px;padding:clamp(17px,2.6vw,30px)}.annual-toolbar{display:flex;align-items:start;justify-content:space-between;gap:14px}.annual-toolbar h3{font-size:17px;color:#3d3037;margin:0 0 2px}.annual-toolbar p{font-size:12px;color:#83757b;margin:0}.annual-legend{display:flex;gap:14px;flex-wrap:wrap;font-size:11px;color:#7d6c74;margin-top:7px}.annual-legend span{white-space:nowrap}.legend-dot{width:9px;height:9px;border-radius:50%;display:inline-block;margin-right:5px}.legend-dot.current{background:#9ca4af}.legend-dot.next{background:#e31c36}
+    .month-controls{padding:16px 19px 10px;background:#fff9fa;border:1px solid #f3e6e8;border-radius:14px;margin:18px 0 16px}.month-controls label{display:block;font-size:12px;color:#63525c}.month-controls output{color:#d71931;font-size:15px;font-weight:900}.month-controls input[type=range]{width:100%;margin:17px 0 9px;accent-color:#e31d34;cursor:pointer}.month-preset-row{display:flex;gap:7px;justify-content:flex-end}.month-preset{font-size:11px;font-weight:800;border:1px solid #e9dce0;background:white;border-radius:999px;padding:7px 13px;color:#9b5662}.month-preset:hover{border-color:#dc6a7a}.month-preset.active{color:white;background:#d91a30;border-color:#d91a30}
+    .forecast-plot{width:100%;overflow:hidden;min-width:0;background:linear-gradient(180deg,#fff,#fffafc);border:1px solid #f4eff0;border-radius:15px;padding:8px 8px 0}.forecast-plot svg{width:100%;height:auto;display:block;overflow:visible}.forecast-gridline{stroke:#f0e7ea;stroke-width:1}.forecast-axis-label{fill:#95838b;font-size:11px;font-weight:600}.forecast-current-line{fill:none;stroke:#9da6b0;stroke-width:3.5;stroke-linecap:round;stroke-linejoin:round}.forecast-next-line{fill:none;stroke:#e21c34;stroke-width:4.5;stroke-linecap:round;stroke-linejoin:round}.forecast-area{fill:rgba(226,28,52,.09)}.forecast-select-line{stroke:#bb93a0;stroke-width:1.5;stroke-dasharray:5 6}.forecast-select-point{fill:#fff;stroke:#e21b34;stroke-width:4}.forecast-select-point-old{fill:white;stroke:#87939f;stroke-width:3}.forecast-marker{fill:#df1d34}.forecast-clickzone{fill:transparent;cursor:pointer}.forecast-clickzone:focus-visible{outline:none;fill:rgba(226,28,52,.07)}
+    .forecast-summary{display:grid;grid-template-columns:1fr 1fr;gap:21px;padding:21px 2px 13px}.forecast-summary>div{min-width:0}.forecast-summary span{font-size:11px;color:#84737c;display:block}.forecast-summary strong{font-size:clamp(20px,2vw,28px);color:#403338;line-height:1.5;display:block;letter-spacing:-.7px}.forecast-summary>div:last-child strong{color:#ce1830}.forecast-track{height:9px;border-radius:99px;background:#f3e9eb;overflow:hidden;margin:5px 0}.forecast-fill{height:100%;border-radius:99px;width:0;transition:width .6s cubic-bezier(.2,.7,.2,1)}.forecast-fill-current{background:#a5aab3}.forecast-fill-next{background:linear-gradient(90deg,#c91228,#f34757)}
+    .annual-insight{background:#fff0f3;border:1px solid #f7d7dd;border-radius:12px;padding:14px 15px;display:flex;gap:12px;align-items:center}.annual-insight-icon{border-radius:9px;background:#e11b33;color:#fff;width:32px;height:32px;display:grid;place-items:center;flex:none;font-size:18px}.annual-insight p{font-size:12px;font-weight:800;color:#9b2337;margin:0;line-height:1.6}.forecast-details{margin-top:14px;border:1px solid #ece1e4;border-radius:12px;padding:12px 15px;color:#72636b}.forecast-details summary{font-size:12px;font-weight:850;color:#b51d32;cursor:pointer}.forecast-details p{font-size:11px;line-height:1.7}.forecast-table-wrap{max-height:290px;overflow:auto}.forecast-table-wrap table{border-collapse:collapse;width:100%;min-width:430px;font-size:11px}.forecast-table-wrap th,.forecast-table-wrap td{border-bottom:1px solid #eee7e9;padding:9px 8px;text-align:right}.forecast-table-wrap th:first-child,.forecast-table-wrap td:first-child{text-align:left}.forecast-table-wrap th{color:#a62439;background:#fff5f7;position:sticky;top:0}.forecast-table-wrap tr.selected{background:#fff4f6;font-weight:850;color:#c92236}.annual-disclaimer{color:#8c777e;font-size:11px;line-height:1.6;margin:15px 0}.annual-bottom-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+    .mobile-dock{display:none}
+    @media(max-width:1150px){.improved-benefits{grid-template-columns:1fr}.benefit-card>p{min-height:auto}.sim-access{flex-wrap:wrap}.sim-access-button{margin-left:auto}}
+    @media(min-width:941px) and (max-width:1160px){.layout{grid-template-columns:minmax(0,1fr)}.aside{display:grid;grid-template-columns:1fr 1fr;gap:14px}.aside>.card{margin:0}}
+    @media(max-width:940px){.mobile-dock{display:flex;position:fixed;bottom:max(9px,env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);z-index:25;align-items:center;justify-content:space-around;gap:6px;padding:7px;min-width:245px;max-width:calc(100vw - 24px);border:1px solid #f1dbe0;border-radius:19px;background:rgba(255,255,255,.96);box-shadow:0 11px 42px rgba(76,21,34,.19);backdrop-filter:blur(13px)}.dock-item{display:flex;align-items:center;justify-content:center;flex-direction:column;border:0;background:transparent;color:#8a5260;padding:5px 18px;border-radius:13px;min-width:66px;font-size:22px;line-height:1.2}.dock-item small{font-size:10px;font-weight:800}.dock-item.active,.dock-item.dock-primary.active{background:#e31d35;color:white}.main{padding-bottom:110px}.sim-access-button{margin-left:auto}}
+    @media(max-width:720px){.sim-access{padding:17px;gap:12px}.sim-access-icon{width:49px;height:49px;border-radius:13px}.sim-access-icon svg{height:31px;width:31px}.sim-access-text{flex:1 1 calc(100% - 70px)}.sim-access-button{width:100%;justify-content:center}.annual-toolbar{flex-direction:column}.annual-stats{grid-template-columns:repeat(2,minmax(0,1fr))}.annual-stat{padding:15px}.annual-stat:last-child{grid-column:1/-1;border-top:1px solid #eee3e6}.annual-heading{padding:19px}.annual-heading-icon{display:none}.forecast-summary{gap:13px}}
+    @media(max-width:500px){.improved-benefits{grid-template-columns:1fr}.annual-chart-card{padding:14px 12px}.annual-heading{padding:18px 15px}.month-controls{padding:13px}.annual-stat strong{font-size:21px}.annual-stat small{line-height:1.4}.forecast-plot{padding:0;margin:0 -4px;width:calc(100% + 8px)}.forecast-summary strong{font-size:21px}.month-preset-row{justify-content:space-between}.month-preset{flex:1;padding:7px 9px}.confirm-panel-header{flex-wrap:wrap}.required-chip{margin-left:45px}.annual-bottom-actions>*{width:100%}.deadline-alert{padding:13px}.benefit-card{padding:15px}.sim-access h3{font-size:17px}}
+    @media(prefers-reduced-motion:reduce){.forecast-fill,.sim-access-button,.benefit-card{animation:none!important;transition:none!important}.sim-access:after{animation:none!important}}
+    body.motion-off .forecast-fill,body.motion-off .sim-access-button,body.motion-off .benefit-card{animation:none!important;transition:none!important}
+    @media print{.sim-access,.mobile-dock,.month-controls,.annual-bottom-actions,.side-btn,.motion-toggle,.hero-actions,.notice{display:none!important}.annual-section{break-before:page}.annual-heading,.annual-stat.annual-featured{print-color-adjust:exact;-webkit-print-color-adjust:exact}.forecast-plot{break-inside:avoid}.annual-disclaimer{color:#333}}
+
   </style>
 </head>
 <body>
@@ -487,6 +515,11 @@
         <!-- IDEA 2: PANEL DE CAMBIOS -->
         <section class="view active" id="view-panel" aria-labelledby="panel-title">
           <div class="section-head"><div><h2 id="panel-title">01. Panel de cambios del plan</h2><p>Revisa una propuesta de modificación y expresa qué deseas hacer antes de que aparezca en el recibo.</p></div><span class="tag tag-wait">● Pendiente de respuesta</span></div>
+          <div class="sim-access motion-extra" role="region" aria-label="Acceso directo destacado al simulador">
+            <div class="sim-access-icon" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none"><rect x="9" y="5" width="30" height="38" rx="7" stroke="currentColor" stroke-width="2.6"/><path d="M16 15h16M16 24h4m7 0h5m-16 8h4m7 0h5" stroke="currentColor" stroke-width="2.7" stroke-linecap="round"/></svg></div>
+            <div class="sim-access-text"><span class="sim-access-kicker">ANTES DE DECIDIR</span><h3>Descubre cuánto pagarías realmente</h3><p>Calcula tu próximo recibo y visualiza cuánto representan <strong>S/ 46 extra al mes</strong> en 3, 6 y 12 meses.</p></div>
+            <button type="button" class="sim-access-button" data-tab="simulador" aria-label="Abrir el simulador de recibos y gasto anual">Abrir simulador <span aria-hidden="true">↗</span></button>
+          </div>
           <div class="layout">
             <div>
               <article class="card">
@@ -498,23 +531,26 @@
                 </div>
                 <div class="delta-row"><span>Diferencia mensual estimada frente a tu plan vigente</span><strong>+ S/ 46,00 · + 46,5 %</strong></div>
                 <h4 class="subheading">¿Qué incluye la propuesta?</h4>
-                <div class="benefit-grid">
-                  <div class="benefit"><span class="checkmark" aria-hidden="true">✓</span><div><b>Más velocidad</b><br>De 100 a 200 Mbps de referencia.</div></div>
-                  <div class="benefit"><span class="checkmark" aria-hidden="true">✓</span><div><b>Mayor capacidad</b><br>Diseñada para varios equipos conectados.</div></div>
-                  <div class="benefit"><span class="checkmark" aria-hidden="true">✓</span><div><b>Fecha visible</b><br>Propuesta para el 01/12/2026.</div></div>
-                  <div class="benefit"><span class="checkmark" aria-hidden="true">✓</span><div><b>Decisión trazable</b><br>Constancia local de la opción seleccionada.</div></div>
+                <div class="benefits-intro"><span class="info-token" aria-hidden="true">i</span><div><strong>Beneficios explicados sin palabras complicadas</strong><p>Conoce qué significan la velocidad, la cobertura y la estabilidad. Los valores son ejemplos, no garantías comerciales.</p></div></div>
+                <div class="benefit-grid improved-benefits">
+                  <article class="benefit-card"><div class="benefit-top"><span class="benefit-svg" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><path d="M5 24a12 12 0 1 1 22 0" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="m16 20 7-9M10 24h12" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span><span class="benefit-label">VELOCIDAD</span></div><h4>100 → 200 Mbps</h4><p>Ejemplo de velocidad contratada que podría facilitar actividades simultáneas como videollamadas, clases y streaming.</p><details class="benefit-help"><summary>¿Qué significa Mbps?</summary><p>Son megabits por segundo: una medida de la velocidad de transmisión de datos. La velocidad real depende de la red, los equipos y la conexión.</p></details></article>
+                  <article class="benefit-card"><div class="benefit-top"><span class="benefit-svg" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><path d="M3 12a19 19 0 0 1 26 0M7 17a13 13 0 0 1 18 0M12 22a6 6 0 0 1 8 0" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><circle cx="16" cy="27" r="2.2" fill="currentColor"/></svg></span><span class="benefit-label">COBERTURA</span></div><h4>Señal en más espacios</h4><p>La cobertura indica hasta dónde llega la conexión. Conviene revisar router, distribución del hogar y áreas donde la señal es débil.</p><details class="benefit-help"><summary>¿Más Mbps = más cobertura?</summary><p>No necesariamente. Un aumento de velocidad no garantiza que el Wi-Fi llegue más lejos; eso depende del equipamiento y del entorno.</p></details></article>
+                  <article class="benefit-card"><div class="benefit-top"><span class="benefit-svg" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><path d="m16 3 11 5v8c0 7-4.5 11-11 13C9.5 27 5 23 5 16V8l11-5Z" stroke="currentColor" stroke-width="2.3" stroke-linejoin="round"/><path d="m11 16 3 3 7-7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="benefit-label">ESTABILIDAD</span></div><h4>Conexión más constante</h4><p>Es la capacidad de mantener una conexión continua, sin interrupciones frecuentes, al trabajar, estudiar o disfrutar contenido.</p><details class="benefit-help"><summary>¿Se garantiza estabilidad?</summary><p>No. Depende de condiciones técnicas y de la red. La propuesta ilustrativa no incluye mediciones ni una garantía de estabilidad.</p></details></article>
                 </div>
+                <div class="benefit-clarity"><span aria-hidden="true">✦</span><span><strong>¿Qué cambia con certeza en este ejemplo?</strong> La tarifa pasa de S/ 99 a S/ 145 y la velocidad nominal de 100 a 200 Mbps. Cobertura y estabilidad requieren verificación técnica; no se prometen mejoras automáticas.</span></div>
                 <p class="small-note">Características y velocidades ficticias con fines académicos. El monto de S/ 145,00 se muestra sin promociones, prorrateos ni cargos extraordinarios. Revisa el simulador para explorar escenarios.</p>
                 <button type="button" class="text-action" data-tab="simulador" style="margin-top:12px">Simular cuánto pagaría →</button>
               </article>
               <article class="card" id="decision-section">
                 <h3 class="card-title">¿Qué deseas hacer con esta propuesta?</h3>
+    <div class="deadline-alert" role="note"><div class="deadline-alert-icon" aria-hidden="true">!</div><div><strong>¿Qué pasa si no respondes antes del 01/12/2026?</strong><p>La propuesta quedaría <b>sin respuesta registrada en esta demostración</b>. Eso <b>no significa que hayas aceptado</b> el cambio. En un servicio real, las consecuencias dependen del contrato, la comunicación aplicable y la regulación; deben informarse expresamente.</p></div></div>
+
                 <div class="select-options" role="radiogroup" aria-label="Elige una opción de decisión">
                   <label class="option"><input type="radio" name="choice" value="Aceptar propuesta"/><span class="option-top"><span class="option-icon" aria-hidden="true">✓</span><span class="select-dot" aria-hidden="true"></span></span><span><strong>Aceptar la propuesta</strong><p>Expresar conformidad con el cambio presentado.</p></span></label>
                   <label class="option"><input type="radio" name="choice" value="Solicitar conservación del plan actual"/><span class="option-top"><span class="option-icon" aria-hidden="true">↺</span><span class="select-dot" aria-hidden="true"></span></span><span><strong>Solicitar conservar mi plan</strong><p>Sujeto a evaluación contractual y normativa.</p></span></label>
                   <label class="option"><input type="radio" name="choice" value="Solicitar asesoría"/><span class="option-top"><span class="option-icon" aria-hidden="true">?</span><span class="select-dot" aria-hidden="true"></span></span><span><strong>Solicitar asesoría</strong><p>Pedir una explicación antes de decidir.</p></span></label>
                 </div>
-                <label class="ack"><input id="read-confirm" type="checkbox"><span>Confirmo que revisé los detalles de ejemplo y entiendo que esta elección se registrará <strong>solo en el prototipo</strong>.</span></label>
+                <div class="confirm-panel" id="confirm-panel"><div class="confirm-panel-header"><span class="confirm-shield" aria-hidden="true">✓</span><div><strong>Confirmación obligatoria</strong><p>Marca la casilla para continuar. Sin ella no podrás generar tu constancia.</p></div><span class="required-chip">OBLIGATORIO</span></div><label class="ack upgraded-ack"><input id="read-confirm" type="checkbox" required aria-describedby="confirm-helper"><span><b>He leído y comprendido la propuesta y sus condiciones ilustrativas.</b><br>Entiendo que mi respuesta será registrada <strong>solo dentro de este prototipo académico</strong>, sin enviar cambios a Claro Perú.</span></label><p id="confirm-helper" class="confirm-helper" role="status" aria-live="polite">Selecciona una opción y marca la casilla para habilitar la constancia.</p></div>
                 <div class="action-row"><button type="button" id="confirm-choice" class="btn-primary" disabled>Generar constancia de ejemplo <span aria-hidden="true">→</span></button><span class="microcopy">Se generará un comprobante local con fecha, hora y opción elegida.</span></div>
               </article>
             </div>
@@ -567,12 +603,27 @@
               </div>
             </article>
           </div>
+          <section class="annual-section" aria-labelledby="annual-title">
+            <div class="annual-heading"><div><span class="annual-eyebrow">NUEVO · PROYECCIÓN INTERACTIVA</span><h2 id="annual-title">¿Cuánto te costará el cambio en un año?</h2><p>Comprueba con un gráfico cuánto representa la diferencia mensual a lo largo del tiempo.</p></div><div class="annual-heading-icon" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none"><path d="M8 35 19 24l8 7 13-17" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M32 14h8v8" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+            <div class="annual-stats"><div class="annual-stat"><span>Diferencia cada mes</span><strong id="annual-monthly">+ S/ 46,00</strong><small>Plan propuesto vs. plan actual</small></div><div class="annual-stat annual-featured"><span>Diferencia en 12 meses</span><strong id="annual-extra">+ S/ 552,00</strong><small id="annual-annual-sub">S/ 46,00 × 12 meses</small></div><div class="annual-stat"><span>Variación del plan</span><strong id="annual-percent">+ 46,5 %</strong><small>Sobre el importe actual</small></div></div>
+            <div class="annual-chart-card">
+              <div class="annual-toolbar"><div><h3>Gasto total acumulado</h3><p>Compara los dos planes durante el periodo que elijas.</p></div><div class="annual-legend"><span><i class="legend-dot current"></i> Plan actual</span><span><i class="legend-dot next"></i> Plan propuesto</span></div></div>
+              <div class="month-controls"><label for="months-range"><strong>Meses que deseas comparar:</strong> <output id="months-output" for="months-range">12 meses</output></label><input id="months-range" type="range" min="1" max="12" value="12" step="1" aria-label="Seleccionar número de meses de la proyección"/><div class="month-preset-row"><button type="button" class="month-preset" data-month="3">3 meses</button><button type="button" class="month-preset" data-month="6">6 meses</button><button type="button" class="month-preset active" data-month="12" aria-pressed="true">12 meses</button></div></div>
+              <div class="forecast-plot"><svg id="forecast-chart" viewBox="0 0 740 300" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Comparación gráfica de gasto acumulado de ambos planes, en soles, de uno a doce meses"><title>Proyección acumulada de los planes</title><desc>Las líneas muestran el gasto del plan actual y del plan propuesto por mes. Cambia los precios o el número de meses para explorar.</desc></svg></div>
+              <div class="forecast-summary" aria-live="polite"><div><span>Plan actual · <b id="forecast-month-label-1">12 meses</b></span><strong id="forecast-current">S/ 1.188,00</strong><div class="forecast-track"><div class="forecast-fill forecast-fill-current" id="forecast-bar-current" style="width:68.28%"></div></div></div><div><span>Plan propuesto · <b id="forecast-month-label-2">12 meses</b></span><strong id="forecast-proposed">S/ 1.740,00</strong><div class="forecast-track"><div class="forecast-fill forecast-fill-next" id="forecast-bar-next" style="width:100%"></div></div></div></div>
+              <div class="annual-insight"><span class="annual-insight-icon" aria-hidden="true">↗</span><p id="forecast-insight">Si pagas S/ 46,00 más cada mes, en un año serían S/ 552,00 adicionales.</p></div>
+              <details class="forecast-details"><summary>Ver tabla de los 12 meses y cómo se calcula</summary><p>Multiplicamos la tarifa mensual actual y la propuesta por el número de meses. La diferencia es <b>(precio propuesto − precio actual) × meses</b>.</p><div class="forecast-table-wrap"><table><thead><tr><th>Meses</th><th>Plan actual</th><th>Plan propuesto</th><th>Diferencia</th></tr></thead><tbody id="forecast-rows"></tbody></table></div></details>
+              <p class="annual-disclaimer"><b>Importante:</b> esta proyección considera 12 meses completos con tarifas fijas; no incluye descuentos temporales, cargos únicos, prorrateos, consumos adicionales ni cambios futuros de precio. Los ajustes del simulador superior solo modifican la estimación del <b>primer recibo</b>, no el gasto mensual recurrente del gráfico.</p>
+              <div class="annual-bottom-actions"><button type="button" class="btn-primary" data-tab="panel">← Regresar al panel y decidir</button><button type="button" class="btn-secondary" id="forecast-print">Imprimir página</button></div>
+            </div>
+          </section>
         </section>
         <footer class="footer"><strong>Mi Claro · Concepto UX</strong> · Diseño conceptual académico no oficial inspirado en Claro Perú · Ideas 2 y 11 · 2026</footer>
       </div>
     </main>
   </div>
 
+  <nav class="mobile-dock" aria-label="Accesos rápidos para celular"><button type="button" class="dock-item" data-tab="panel" aria-label="Ir al panel de cambios"><span aria-hidden="true">▤</span><small>Mi plan</small></button><button type="button" class="dock-item dock-primary" data-tab="simulador" aria-label="Ir al simulador anual"><span aria-hidden="true">▥</span><small>Simular</small></button><button type="button" class="dock-item" id="go-top" aria-label="Volver arriba"><span aria-hidden="true">↑</span><small>Arriba</small></button></nav>
   <div class="modal-backdrop" id="receipt-modal" aria-hidden="true">
     <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-description">
       <button type="button" id="close-modal" class="close" aria-label="Cerrar constancia">×</button>
@@ -738,6 +789,99 @@
       }
       calculate();
     })();
+  </script>
+
+  <script>
+  (function(){
+    'use strict';
+    const get=id=>document.getElementById(id);
+    const pesos=(v)=>'S/ '+Number(v).toLocaleString('es-ES',{minimumFractionDigits:2,maximumFractionDigits:2});
+    const safeNum=id=>{let n=parseFloat(get(id).value);return Number.isFinite(n)?Math.max(0,Math.min(10000,n)):0};
+    let selectedMonth=12;
+    const svgNS='http://www.w3.org/2000/svg';
+    const fmt=(v)=>Number(v).toLocaleString('es-ES',{maximumFractionDigits:0});
+    const signed=(n)=>n>=0?'+ '+pesos(n):'− '+pesos(-n);
+    function svg(tag,attrs,parent,text){const node=document.createElementNS(svgNS,tag);for(const [k,v] of Object.entries(attrs||{}))node.setAttribute(k,String(v));if(text!==undefined)node.textContent=text;(parent||get('forecast-chart')).appendChild(node);return node;}
+    function calcForecast(){
+      const a=safeNum('current-price'),b=safeNum('proposed-price'),d=b-a,year=12*d;
+      get('annual-monthly').textContent=signed(d);
+      get('annual-extra').textContent=signed(year);
+      get('annual-annual-sub').textContent=`${pesos(Math.abs(d))} × 12 meses`;
+      get('annual-percent').textContent=a>0?(d>=0?'+ ':'− ')+Math.abs(100*d/a).toLocaleString('es-ES',{maximumFractionDigits:1,minimumFractionDigits:1})+' %':'No calculable';
+      const short=selectedMonth===1?'1 mes':selectedMonth+' meses';
+      get('months-output').textContent=short;
+      ['forecast-month-label-1','forecast-month-label-2'].forEach(id=>get(id).textContent=short);
+      get('forecast-current').textContent=pesos(a*selectedMonth);
+      get('forecast-proposed').textContent=pesos(b*selectedMonth);
+      const diff=d*selectedMonth;
+      get('forecast-insight').textContent=Math.abs(d)<.005?`Con estas tarifas pagarías lo mismo durante ${short}.`:d>0?`Al pagar ${pesos(d)} más cada mes, gastarías ${pesos(diff)} adicionales en ${short}.`:`Con el nuevo precio ahorrarías ${pesos(-diff)} en ${short}.`;
+      const maxBars=Math.max(a*selectedMonth,b*selectedMonth,1);
+      get('forecast-bar-current').style.width=(100*a*selectedMonth/maxBars)+'%';
+      get('forecast-bar-next').style.width=(100*b*selectedMonth/maxBars)+'%';
+      get('months-range').value=selectedMonth;
+      document.querySelectorAll('.month-preset').forEach(btn=>{let chosen=+btn.dataset.month===selectedMonth;btn.classList.toggle('active',chosen);btn.setAttribute('aria-pressed',String(chosen))});
+      drawChart(a,b);
+      const tbody=get('forecast-rows');tbody.replaceChildren();
+      for(let m=1;m<=12;m++){
+        const tr=document.createElement('tr');if(m===selectedMonth)tr.className='selected';
+        [m+(m===1?' mes':' meses'),pesos(a*m),pesos(b*m),signed((b-a)*m)].forEach(v=>{const td=document.createElement('td');td.textContent=v;tr.appendChild(td)});
+        tbody.appendChild(tr);
+      }
+    }
+    function drawChart(a,b){
+      const main=get('forecast-chart');
+      // Retain readable title/description when replacing chart shapes.
+      const title=main.querySelector('title')?.cloneNode(true);const desc=main.querySelector('desc')?.cloneNode(true);
+      main.replaceChildren();if(title)main.appendChild(title);if(desc)main.appendChild(desc);
+      const left=77,right=710,top=23,bottom=250,w=right-left,h=bottom-top;
+      const highest=Math.max(a*12,b*12,1)*1.08;
+      const rawStep=highest/4, pow=Math.pow(10,Math.floor(Math.log10(rawStep))), ratio=rawStep/pow;
+      const step=(ratio<=1?1:ratio<=2?2:ratio<=5?5:10)*pow;
+      const ceiling=step*4;
+      const x=m=>left+w*(m/12), y=val=>bottom-(val/ceiling)*h;
+      for(let i=0;i<=4;i++){
+        const value=ceiling*i/4,pos=y(value);
+        svg('line',{x1:left,y1:pos,x2:right,y2:pos,class:'forecast-gridline'},main);
+        svg('text',{x:left-12,y:pos+4,'text-anchor':'end',class:'forecast-axis-label'},main,'S/ '+fmt(value));
+      }
+      [1,3,6,9,12].forEach(m=>svg('text',{x:x(m),y:bottom+24,'text-anchor':'middle',class:'forecast-axis-label'},main,'Mes '+m));
+      const curr=Array.from({length:13},(_,m)=>[x(m),y(m*a)]);
+      const next=Array.from({length:13},(_,m)=>[x(m),y(m*b)]);
+      const path=arr=>arr.map((p,i)=>(i?'L':'M')+p[0].toFixed(1)+' '+p[1].toFixed(1)).join(' ');
+      const area=path(next)+' '+curr.slice().reverse().map(p=>'L'+p[0].toFixed(1)+' '+p[1].toFixed(1)).join(' ')+' Z';
+      svg('path',{d:area,class:'forecast-area'},main);
+      svg('path',{d:path(curr),class:'forecast-current-line'},main);
+      svg('path',{d:path(next),class:'forecast-next-line'},main);
+      const sx=x(selectedMonth);svg('line',{x1:sx,y1:top,x2:sx,y2:bottom,class:'forecast-select-line'},main);
+      svg('circle',{cx:sx,cy:y(a*selectedMonth),r:7,class:'forecast-select-point-old'},main);
+      svg('circle',{cx:sx,cy:y(b*selectedMonth),r:8,class:'forecast-select-point'},main);
+      const group=svg('g',{},main);
+      const markerX=Math.min(Math.max(sx-60,left+5),right-128);
+      svg('rect',{x:markerX,y:6,rx:10,width:125,height:24,class:'forecast-marker'},group);
+      svg('text',{x:markerX+62.5,y:22,'text-anchor':'middle',fill:'#fff','font-weight':'800','font-size':'11'},group,`${selectedMonth} ${selectedMonth===1?'mes':'meses'}`);
+      // Accessible mouse / keyboard hit zones for every point.
+      for(let m=1;m<=12;m++){
+        const zone=svg('rect',{x:x(m)-w/24,y:top,width:w/12,height:h,class:'forecast-clickzone',tabindex:'0',role:'button','aria-label':`Ver proyección del mes ${m}`},main);
+        zone.addEventListener('click',()=>setMonths(m));
+        zone.addEventListener('keydown',ev=>{if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();setMonths(m)}});
+      }
+      main.setAttribute('aria-label',`Gráfico comparativo. Plan actual ${pesos(a)} al mes y plan propuesto ${pesos(b)} al mes. En ${selectedMonth} meses son ${pesos(a*selectedMonth)} frente a ${pesos(b*selectedMonth)}; diferencia ${pesos((b-a)*selectedMonth)}.`);
+    }
+    function setMonths(m){selectedMonth=Math.min(12,Math.max(1,Number(m)||12));calcForecast()}
+    get('months-range').addEventListener('input',ev=>setMonths(ev.target.value));
+    document.querySelectorAll('.month-preset').forEach(el=>el.addEventListener('click',()=>setMonths(el.dataset.month)));
+    ['current-price','proposed-price'].forEach(id=>get(id).addEventListener('input',calcForecast));
+    get('reset-sim').addEventListener('click',()=>setMonths(12));
+    get('forecast-print').addEventListener('click',()=>window.print());
+    get('go-top').addEventListener('click',()=>window.scrollTo({top:0,behavior:document.body.classList.contains('motion-off')?'instant':'smooth'}));
+    function updateDock(){let section=get('view-simulador').classList.contains('active')?'simulador':'panel';document.querySelectorAll('.mobile-dock [data-tab]').forEach(el=>{let yes=el.dataset.tab===section;el.classList.toggle('active',yes);el.setAttribute('aria-current',yes?'page':'false')})}
+    document.querySelectorAll('[data-tab]').forEach(el=>el.addEventListener('click',()=>requestAnimationFrame(updateDock)));
+    window.addEventListener('hashchange',updateDock);updateDock();
+    const ack=get('read-confirm'),choices=[...document.querySelectorAll('input[name="choice"]')],panel=get('confirm-panel'),helper=get('confirm-helper');
+    function showConfirmation(){const chose=choices.some(c=>c.checked),valid=chose&&ack.checked;panel.classList.toggle('valid',valid);helper.textContent=valid?'¡Listo! Puedes generar tu constancia de demostración.':!chose?'Paso 1: elige una opción. Paso 2: marca la casilla obligatoria.':'Ahora marca la casilla obligatoria para habilitar el comprobante.'}
+    ack.addEventListener('change',showConfirmation);choices.forEach(c=>c.addEventListener('change',showConfirmation));showConfirmation();
+    calcForecast();
+  })();
   </script>
 </body>
 </html>
